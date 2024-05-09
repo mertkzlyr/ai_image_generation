@@ -3,7 +3,6 @@ const OpenAI = require('openai');
 const openai = new OpenAI({
   apiKey: process.env['OPENAI_API_KEY'], // Set up OpenAI API key
 });
-const fs = require('fs');
 
 // Controller function to generate image
 const generateImage = async (req, res) => {
@@ -47,41 +46,4 @@ const generateImage = async (req, res) => {
   }
 };
 
-// Function to edit image
-const editImage = async (req, res) => {
-  const { prompt } = req.body;
-
-  try {
-    const response = await openai.images.edit({
-      model: 'dall-e-2',
-      image: fs.createReadStream('image.png'),
-      mask: fs.createReadStream('mask.png'),
-      prompt,
-      n: 1,
-    });
-
-    const imageUrl = response.data;
-
-    // Send success response with image URL
-    res.status(200).json({
-      success: true,
-      data: imageUrl,
-    });
-  } catch (error) {
-    // Handle errors
-    if (error.response) {
-      console.log(error.response.status);
-      console.log(error.response.data);
-    } else {
-      console.log(error.message);
-    }
-
-    // Send error response
-    res.status(400).json({
-      success: false,
-      error: 'The image could not be edited',
-    });
-  }
-};
-
-module.exports = { generateImage, editImage }; // Export controller function
+module.exports = { generateImage }; // Export controller function

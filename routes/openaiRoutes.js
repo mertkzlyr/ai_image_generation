@@ -1,6 +1,7 @@
 // Importing required modules
 const express = require('express');
-const { generateImage, editImage } = require('../controllers/openaiController'); // Importing the controller function
+const { generateImage } = require('../controllers/generateImage');
+const { editImage } = require('../controllers/editImage');
 const router = express.Router();
 
 // Define routes

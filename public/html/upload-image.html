@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Upload</title>
+</head>
+<body>
+    <h1>Upload Files</h1>
+    <img src="../images/example.png" alt="">
+    <form class="upload-form" action="/upload" method="post" enctype="multipart/form-data">
+        <div>
+            <label for="image">Image (PNG, max 4MB):</label>
+            <input type="file" id="image" name="image" accept=".png" required>
+        </div>
+        <div>
+            <label for="mask">Mask (PNG, max 4MB):</label>
+            <input type="file" id="mask" name="mask" accept=".png" required>
+        </div>
+        <button type="submit">Upload</button>
+    </form>
+</body>
+</html>
+
+
