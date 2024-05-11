@@ -3,10 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form</title>
-    <link rel="stylesheet" href="../css/spinner.css" />
+    <title>File Upload</title>
     <link rel="stylesheet" href="../css/style.css">
-    <script src="../js/editImage.js" defer></script>
 </head>
 <body>
     <header>
@@ -25,18 +23,15 @@
           </div>
         </div>
       </header>
-    <form id="image-form">
-        <a href="../html/upload-edit-image.html">Go Back</a>
-        <input id="prompt" type="text" placeholder="Enter Text"></input>
-        <button type="submit" class="btn">Edit Image</button>
-    </form>
-    <section class="image">
-        <div class="image-container">
-          <h2 class="msg"></h2>
-          <img src="" alt="" id="image" />
+    <h1>Upload Files</h1>
+    <form class="upload-form" action="/upload-create-variation" method="post" enctype="multipart/form-data">
+        <div>
+            <label for="image">Image (PNG, max 4MB):</label>
+            <input type="file" id="variation" name="variation" accept=".png" required>
         </div>
-    </section>
-
-    <div class="spinner"></div>
+        <button type="submit">Upload</button>
+    </form>
 </body>
 </html>
+
+

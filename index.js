@@ -15,7 +15,11 @@ const app = express();
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     const uploadPath =
-      file.fieldname === 'image' ? 'uploads/image' : 'uploads/mask';
+      file.fieldname === 'image'
+        ? 'uploads/image'
+        : file.fieldname === 'mask'
+        ? 'uploads/mask'
+        : 'uploads/variation';
     if (!fs.existsSync(uploadPath)) {
       fs.mkdirSync(uploadPath, { recursive: true });
     }
@@ -37,7 +41,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Routing
 app.use('/openai', require('./routes/openaiRoutes')); // Use routes defined in openaiRoutes.js
 app.post(
-  '/upload',
+  '/upload-edit-image',
   upload.fields([
     { name: 'image', maxCount: 1 },
     { name: 'mask', maxCount: 1 },
@@ -46,6 +50,10 @@ app.post(
     res.sendFile('public/html/edit-image.html', { root: __dirname });
   }
 );
+
+app.post('/upload-create-variation', upload.single('variation'), (req, res) => {
+  res.sendFile('public/html/create-variation.html', { root: __dirname });
+});
 
 // Start server
 app.listen(port, () => console.log(`Server running on port ${port}`));
