@@ -23,15 +23,19 @@
           </div>
         </div>
       </header>
-    <h1>Upload Files</h1>
+    <div class="center">
+    <h1 style="margin-top: 80px;">Upload Files</h1>
     <form class="upload-form" action="/upload-create-variation" method="post" enctype="multipart/form-data">
         <div>
-            <label for="image">Image (PNG, max 4MB):</label>
-            <input type="file" id="variation" name="variation" accept=".png" required>
+            <label class="choose_IMG_btn" for="variation">Choose Image</label>
+            <p>(PNG, max 4MB)</p>
+            <input type="file" id="variation" name="variation" accept=".png" required style="visibility: hidden;">
         </div>
         <button type="submit">Upload</button>
     </form>
+  </div>
 </body>
+
 </html>
 
 

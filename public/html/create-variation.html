@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form</title>
+    <title>Create Variation</title>
     <link rel="stylesheet" href="../css/spinner.css" />
     <link rel="stylesheet" href="../css/style.css">
     <script src="../js/createVariation.js" defer></script>
@@ -18,24 +18,22 @@
             <ul>
               <li>
                 <a href="https://status.openai.com/" target="_blank"
-                  >OpenAI Server Status</a
-                >
+                  >OpenAI Server Status</a>
               </li>
             </ul>
           </div>
         </div>
       </header>
-    <form id="image-form">
-        <a href="../html/upload-create-variation.html">Go Back</a>
-        <button type="submit" class="btn">Edit Image</button>
-    </form>
-    <section class="image">
-        <div class="image-container">
-          <h2 class="msg"></h2>
-          <img src="" alt="" id="image" />
-        </div>
-    </section>
-
+    
+    <form id="image-form" class="image_form">
+      <button style="margin-top: 100px;" type="submit" class="btn">Create Variation</button>
+  </form>
+  <section class="image">
+    <div class="image-container">
+      <h2 class="msg"></h2>
+      <img src="" alt="" id="image" />
+    </div>
+</section>
     <div class="spinner"></div>
 </body>
 </html>
