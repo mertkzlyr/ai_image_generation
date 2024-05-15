@@ -36,7 +36,7 @@ const upload = multer({ storage: storage });
 app.use(express.json()); // Parse JSON bodies
 app.use(express.urlencoded({ extended: false })); // Parse URL-encoded bodies
 
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'docs')));
 
 // Routing
 app.use('/openai', require('./routes/openaiRoutes')); // Use routes defined in openaiRoutes.js
@@ -47,12 +47,12 @@ app.post(
     { name: 'mask', maxCount: 1 },
   ]),
   (req, res) => {
-    res.sendFile('public/html/edit-image.html', { root: __dirname });
+    res.sendFile('docs/html/edit-image.html', { root: __dirname });
   }
 );
 
 app.post('/upload-create-variation', upload.single('variation'), (req, res) => {
-  res.sendFile('public/html/create-variation.html', { root: __dirname });
+  res.sendFile('docs/html/create-variation.html', { root: __dirname });
 });
 
 // Start server
