@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Image</title>
+    <link rel="stylesheet" href="../css/spinner.css" />
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/editImage.js" defer></script>
+    <script src="../js/particle.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+          <div class="logo">
+            <h2><a style="font-size: 24px;" href="../index.html">OpenAI Image Generator</a><a id="edit-image" href="../html/upload-edit-image.html">Edit Image</a><a id="create-variation" href="../html/upload-create-variation.html">Create Variation</a></h2>
+          </div>
+          <div class="nav-links">
+            <ul>
+              <li>
+                <a href="https://status.openai.com/" target="_blank"
+                  >OpenAI Server Status</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="background">
+        <canvas id="c"></canvas> 
+  
+      </div>
+      <section class="image" style="margin-top: 120px;">
+        <div class="image-container">
+          <h2 class="msg"></h2>
+          <img class="generated_Image" src="" alt="" id="image" height="410px" width="480px"/>
+        </div>
+    </section>
+    <form id="image-form" class="center" style="margin-top: 100px;">
+        <!-- <a href="../html/upload-edit-image.html">Go Back</a> -->
+        <input class="edit_IMG" class="edit_input" id="prompt" type="text" placeholder="Enter Description" autocomplete="off"></input>
+        <button style="display: flex; margin-left: 45%;" type="submit" class="btn">Edit Image</button>
+    </form>
+    
+
+    <div class="spinner"></div>
+</body>
+</html>
