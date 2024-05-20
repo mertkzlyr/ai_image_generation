@@ -9,7 +9,7 @@
 }
 
 :root {
-  --primary-color: rgb(190, 20, 190);
+  --primary-color: rgb(110, 116, 109);
 }
 
 body {
@@ -22,13 +22,28 @@ body {
   line-height: 1.5;
   color: white;
  /*  background: #f4f4f4; */
- background-image: -webkit-linear-gradient(-45deg,#d1bfbf, rgb(7, 52, 136));
- animation: gradient 15s ease infinite;
+ background-color: #000;
+
+ animation: gradient 10s ease infinite;
  background-size: 400% 400%;
+ overflow:auto;
 }
 
 .center{
   text-align: center;
+}
+
+.upload-form{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.asd{
+  position: fixed;
+  margin: auto;
+  margin-top: 450px;
 }
 
 /* Navbar */
@@ -39,6 +54,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  backdrop-filter: blur(3px);
+  background-color: #3333334f;
 }
 
 .navbar ul {
@@ -73,7 +90,7 @@ body {
 
 /* Showcase */
 .showcase {
-margin-top: 100px;
+margin-top: 60px;
 }
 
 .showcase h1 {
@@ -100,8 +117,11 @@ form select {
   padding: 1rem;
   border-radius: 5px;
   margin-bottom: 1rem;
-  background-color: #333;
+  background-color: rgba(109, 105, 105, 0.063);
   color: #fff;
+  backdrop-filter: blur(3px);
+  border-radius: 30px;
+  border: 1px solid #cfafaf;
 }
 
 form button {
@@ -117,9 +137,14 @@ form button {
   box-shadow: 0px 18px 13px -6px rgba(0, 0, 0,0.2);
 }
 
+.dasak{
+  display: grid;
+  padding: 20px;
+}
+
 form button:hover {
   transform: scale(1.1);
-  color: rgb(190, 20, 190);
+  color: #000000;
   box-shadow: 0px 25px 18px -6px rgba(0, 0, 0,0.2);
 }
 
@@ -136,13 +161,29 @@ form button:hover {
   display: flex;
   margin-top: 4px;
   margin-bottom: 4px;
-  margin-left: 47%;
   box-shadow: 0px 18px 13px -6px rgba(0, 0, 0,0.2);
+  margin-left: auto;
+  margin-right: auto;
 }
+
+.edit_IMG{
+  font-size: 20px;
+  width: 500px;
+  max-width: 500px;
+  padding: 1rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  background-color: rgba(109, 105, 105, 0.063);
+  color: #fff;
+  backdrop-filter: blur(3px);
+  border-radius: 30px;
+  border: 1px solid #cfafaf;
+}
+
 
 .choose_IMG_btn:hover{
   transform: scale(1.1);
-  color:rgb(190, 20, 190);
+  color:rgb(110, 116, 109);
   box-shadow: 0px 25px 18px -6px rgba(0, 0, 0,0.2);
 }
 
@@ -170,6 +211,13 @@ form button:hover {
 img {
   display: block;
   margin: auto;
+}
+
+.generated_Image{
+  border-radius: 70px; 
+  border: 0; 
+  backdrop-filter: blur(3px); 
+  background-color: #33333342;
 }
 
 .msg {
@@ -200,4 +248,33 @@ img {
 	100% {
 		background-position: 0% 50%;
 	}
+} 
+
+/* By Boujjou Achraf*/
+
+/*basic reset */
+            
+
+
+#wrapper{
+  position: relative;
 }
+  
+
+.content{
+  color: #FFFFFF;
+  font-size: 26px;
+  font-weight: bold;
+  text-shadow: -1px -1px 1px #000, 1px 1px 1px #000;
+  position: relative;
+  z-index: 100;
+}
+
+.background{
+  color: #999999;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -100;
+}
+canvas {display:block;}

@@ -8,10 +8,21 @@
     <link rel="stylesheet" href="css/spinner.css" />
 
     <script src="js/generateImage.js" defer></script>
-    <title>OpenAI Image Genrator</title>
+    <script src="js/particle.js" defer></script>
+    <title>OpenAI Image Generator</title>
+
   </head>
-  <body>
+      
     <header>
+      <div id="wrapper">
+        <div class="content">    
+            
+        </div>
+        <div class="background">
+          <canvas id="c"></canvas> 
+    
+        </div>
+    </div>
       <div class="navbar">
         <div class="logo">
           <h2>OpenAI Image Generator <a id="edit-image" href="html/upload-edit-image.html">Edit Image</a><a id="create-variation" href="html/upload-create-variation.html">Create Variation</a></h2>
@@ -28,13 +39,14 @@
         </div>
       </div>
     </header>
-
+    
     <main>
+      
       <section class="showcase">
         <form id="image-form">
           <h1>Describe An Image</h1>
           <div class="form-control">
-            <input type="text" id="prompt" placeholder="Enter Text" />
+            <input type="text" id="prompt" placeholder="Enter Description" autocomplete="off" />
           </div>
           <!-- size -->
           <div class="form-control">
@@ -45,13 +57,16 @@
             </select>
           </div>
           <button type="submit" class="btn">Generate</button>
+        
         </form>
+        
       </section>
+
 
       <section class="image">
         <div class="image-container">
           <h2 class="msg"></h2>
-          <img src="" alt="" id="image" />
+          <img class="generated_Image" src="" alt="" id="image"  height="410px" width="480px" />
         </div>
       </section>
     </main>
@@ -59,3 +74,4 @@
     <div class="spinner"></div>
   </body>
 </html>
+

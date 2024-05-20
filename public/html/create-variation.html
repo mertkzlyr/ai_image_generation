@@ -7,12 +7,15 @@
     <link rel="stylesheet" href="../css/spinner.css" />
     <link rel="stylesheet" href="../css/style.css">
     <script src="../js/createVariation.js" defer></script>
+    <script src="../js/partical.js" defer></script>
 </head>
 <body>
+
+  
     <header>
         <div class="navbar">
           <div class="logo">
-            <h2><a href="../index.html">OpenAI Image Generator</a><a id="edit-image" href="../html/upload-edit-image.html">Edit Image</a><a id="create-variation" href="../html/upload-create-variation.html">Create Variation</a></h2>
+            <h2><a style="font-size: 24px;" href="../index.html">OpenAI Image Generator</a><a id="edit-image" href="../html/upload-edit-image.html">Edit Image</a><a id="create-variation" href="../html/upload-create-variation.html">Create Variation</a></h2>
           </div>
           <div class="nav-links">
             <ul>
@@ -24,16 +27,21 @@
           </div>
         </div>
       </header>
+      <div class="background">
+        <canvas id="c"></canvas> 
+  
+      </div>
+     
     
-    <form id="image-form" class="image_form">
-      <button style="margin-top: 100px;" type="submit" class="btn">Create Variation</button>
-  </form>
-  <section class="image">
+  <section class="image" style="margin-top: 120px;">
     <div class="image-container">
       <h2 class="msg"></h2>
-      <img src="" alt="" id="image" />
+      <img class="generated_Image" src="" alt="" id="image" height="410px" width="480px"/>
     </div>
 </section>
+<form id="image-form" class="image_form">
+  <button style="margin-top: 80px; " type="submit" class="btn">Create Variation</button>
+</form>
     <div class="spinner"></div>
 </body>
 </html>

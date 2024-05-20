@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Upload</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/particle.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+          <div class="logo">
+            <h2><a style="font-size: 24px;" href="../index.html">OpenAI Image Generator</a><a id="edit-image" href="../html/upload-edit-image.html">Edit Image</a><a id="create-variation" href="../html/upload-create-variation.html">Create Variation</a></h2>
+          </div>
+          <div class="nav-links">
+            <ul>
+              <li>
+                <a href="https://status.openai.com/" target="_blank"
+                  >OpenAI Server Status</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </header>
+
+      <div class="background">
+        <canvas id="c"></canvas> 
+  
+      </div>
+     
+    <h1 class="center" style="margin-top: 100px; margin-bottom: 20px;">Upload Files</h1>
+    <form class="upload-form center" action="/upload-edit-image" method="post" enctype="multipart/form-data">
+        <div style="margin-right: 40px;">
+            <img src="https://cdn.openai.com/API/images/guides/image_edit_original.webp" alt="" height="220px" width="220px">
+            <input type="file" id="image" name="image" accept=".png" required style="visibility: hidden;">
+            <label class="choose_IMG_btn" for="image"> Upload Image</label>
+            <p>(PNG, max 4MB)</p>
+        </div>
+        <div style="margin-left: 40px;">
+            <img src="https://cdn.openai.com/API/images/guides/image_edit_mask.webp" alt="" height="220px" width="220px">
+            <input type="file" id="mask" name="mask" accept=".png" required style="visibility: hidden;">
+            <label class="choose_IMG_btn" for="mask">Masked Image </label>
+            <p>(PNG, max 4MB)</p>
+        </div>
+        <div class="upload-form asd">
+          <button class="choose_IMG_btn"  type="submit">Upload</button>
+        </div>
+        
+    </form>
+    
+</body>
+</html>
+
+
