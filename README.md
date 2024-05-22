@@ -10,7 +10,7 @@ To run this application on your local host, follow these steps:
 
 2. **Clone this repository**: 
    ```bash
-   git clone https://github.com/your-username/openai-image-generator.git
+   git clone https://github.com/mertkzlyr/openai-image-generator.git
    cd openai-image-generator
 3. **Install dependencies**:
    ```bash
