@@ -6,11 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/spinner.css" />
-
+    <link rel="icon" href="img/logo.png"/>
     <script src="js/generateImage.js" defer></script>
     <script src="js/particle.js" defer></script>
-    <title>OpenAI Image Generator</title>
+    <title>Imagine AI</title>
+    <style>
+      h2 {
+    display: flex;
+    align-items: center;
+}
 
+h2 img {
+    margin-right: 5px; /* Optional: Add space between the image and the links */
+}
+
+h2 a {
+    margin-left: 5px; /* Optional: Add space between the links */
+    text-decoration: none; /* Optional: Remove underline from links */
+}
+
+    </style>
   </head>
       
     <header>
@@ -20,13 +35,16 @@
         </div>
         <div class="background">
           <canvas id="c"></canvas> 
-    
         </div>
     </div>
       <div class="navbar">
         <div class="logo">
-          <h2>OpenAI Image Generator <a id="edit-image" href="html/upload-edit-image.html">Edit Image</a><a id="create-variation" href="html/upload-create-variation.html">Create Variation</a></h2>
-            
+          <h2>
+            <img style="height: 60px; width: 60px; margin-right: 15px;" src="img/header.png" alt="">
+            Imagine AI
+            <a id="edit-image" href="html/upload-edit-image.html">Edit Image</a>
+            <a id="create-variation" href="html/upload-create-variation.html">Create Variation</a>
+        </h2>        
         </div>
         <div class="nav-links">
           <ul>
