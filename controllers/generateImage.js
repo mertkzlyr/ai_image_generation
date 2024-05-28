@@ -10,15 +10,15 @@ const generateImage = async (req, res) => {
   const { prompt, size } = req.body;
 
   // Determine image size based on input
-  const imageSize =
-    size === 'small' ? '256x256' : size === 'medium' ? '512x512' : '1024x1024';
+  // const imageSize =
+  //   size === 'small' ? '256x256' : size === 'medium' ? '512x512' : '1024x1024';
 
   try {
     // Generate image using OpenAI API
     const response = await openai.images.generate({
+      model: 'dall-e-3',
       prompt,
       n: 1,
-      size: imageSize,
     });
 
     // Extract image URL from response

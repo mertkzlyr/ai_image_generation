@@ -24,38 +24,45 @@
             </ul>
           </div>
         </div>
-        
       </header>
 
       <div class="background">
         <canvas id="c"></canvas> 
-  
       </div>
      
     <div class="center">
-    <h1 style="margin-top: 80px;">Upload Files</h1>
-    <form class="upload-form" action="/upload-create-variation" method="post" enctype="multipart/form-data">
-        <div style="margin-right: 40px;">
+      <h1 style="margin-top: 80px;">Upload Files</h1>
+      <form id="image-form" class="upload-form" action="/upload-create-variation" method="post" enctype="multipart/form-data">
+          <div style="margin-right: 40px;">
+              <div>
+                <img id="placeholder" src="../img/img-uYG06yyItI3LtbDLCjvyskxV.png" alt="" width="220px" height="220px">
+              </div>
+              <input type="file" id="variation" name="variation" accept=".png" required style="visibility: hidden;">
+              <label class="choose_IMG_btn" for="variation">Choose Image</label>
+              <p>(PNG, max 4MB)</p>
+          </div>
+          <div style="margin-left: 40px; margin-top: 20px;">
             <div>
-              <img src="../img/img-uYG06yyItI3LtbDLCjvyskxV.png" alt="" width="220px" height="220px">
-            </div>
-            <input type="file" id="variation" name="variation" accept=".png" required style="visibility: hidden;">
-            <label class="choose_IMG_btn" for="variation">Choose Image</label>
-            <p>(PNG, max 4MB)</p>
-        </div>
-        <div style="margin-left: 40px; margin-top: 20px;">
-          <div>
-          <img src="../img/img-yKMXTsV5VGk0Egf4yQZ9SHw6.png" alt="" width="220px" height="220px">
-        </div>
-          <button style="margin-top: 20px;" class="choose_IMG_btn dasak" type="submit">Upload</button>
-          <p style="visibility: hidden;">placeholder</p>
-          <p style="visibility: hidden;">placeholder</p>
-        </div>
-        
-    </form>
-  </div>
+            <img src="../img/img-yKMXTsV5VGk0Egf4yQZ9SHw6.png" alt="" width="220px" height="220px">
+          </div>
+            <button style="margin-top: 20px;" class="choose_IMG_btn test" type="submit">Upload</button>
+            <p style="visibility: hidden;">placeholder</p>
+            <p style="visibility: hidden;">placeholder</p>
+          </div>
+      </form>
+    </div>
 </body>
-
+<script>
+  // Event listener for file input change
+document.querySelector('#variation').addEventListener('change', function () {
+  const file = this.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = function (e) {
+      document.querySelector('#placeholder').src = e.target.result;
+    };
+    reader.readAsDataURL(file);
+  }
+});
+</script>
 </html>
-
-

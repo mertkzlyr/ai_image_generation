@@ -30,7 +30,8 @@ async function editImageRequest(prompt) {
 
     if (!response.ok) {
       removeSpinner();
-      throw new Error('That image could not be edited');
+      const errorData = await response.json();
+      throw new Error(errorData.error || 'That image could not be edited');
     }
 
     const data = await response.json();

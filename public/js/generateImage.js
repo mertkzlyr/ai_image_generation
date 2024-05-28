@@ -5,17 +5,16 @@ function onSubmit(e) {
   document.querySelector('#image').src = '';
 
   const prompt = document.querySelector('#prompt').value;
-  const size = document.querySelector('#size').value;
 
   if (prompt === '') {
     alert('Please add some text');
     return;
   }
 
-  generateImageRequest(prompt, size);
+  generateImageRequest(prompt);
 }
 
-async function generateImageRequest(prompt, size) {
+async function generateImageRequest(prompt) {
   try {
     showSpinner();
 
@@ -26,7 +25,6 @@ async function generateImageRequest(prompt, size) {
       },
       body: JSON.stringify({
         prompt,
-        size,
       }),
     });
 

@@ -28,17 +28,20 @@ const editImage = async (req, res) => {
     });
   } catch (error) {
     // Handle errors
+    let errorMessage = 'The image could not be edited';
     if (error.response) {
       console.log(error.response.status);
       console.log(error.response.data);
+      errorMessage = error.response.data.error.message || errorMessage;
     } else {
       console.log(error.message);
+      errorMessage = error.message;
     }
 
     // Send error response
     res.status(400).json({
       success: false,
-      error: 'The image could not be edited',
+      error: errorMessage,
     });
   }
 };

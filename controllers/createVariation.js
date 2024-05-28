@@ -5,7 +5,7 @@ const openai = new OpenAI({
 });
 const fs = require('fs');
 
-// Function to edit image
+// Function to create image variation
 const createVariation = async (req, res) => {
   try {
     const response = await openai.images.createVariation({
@@ -24,17 +24,20 @@ const createVariation = async (req, res) => {
     });
   } catch (error) {
     // Handle errors
+    let errorMessage = 'The image could not be generated';
     if (error.response) {
       console.log(error.response.status);
       console.log(error.response.data);
+      errorMessage = error.response.data.error.message || errorMessage;
     } else {
       console.log(error.message);
+      errorMessage = error.message;
     }
 
     // Send error response
     res.status(400).json({
       success: false,
-      error: 'The image could not be generated',
+      error: errorMessage,
     });
   }
 };

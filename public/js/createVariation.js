@@ -20,7 +20,8 @@ async function createVariationRequest() {
 
     if (!response.ok) {
       removeSpinner();
-      throw new Error('That image could not be generated');
+      const errorData = await response.json();
+      throw new Error(errorData.error || 'That image could not be generated');
     }
 
     const data = await response.json();
